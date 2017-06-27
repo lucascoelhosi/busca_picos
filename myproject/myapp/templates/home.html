@@ -1,0 +1,60 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div role="main" class="col-sm-12 col-md-8">
+            <h2>O projeto</h2>
+            <p class="col-xs-12 col-sm-12 col-md-12 text-justify"> 
+                O Busca Picos é um projeto que visa atender a todo público que venha a precisar localizar produtos, serviços e empresas na cidade de Picos - PI. 
+            </p>
+            <p class="col-xs-12 col-sm-12 col-md-12 text-justify">
+                Em praceria com as empresas e demais 
+                ofertadores, o site atuará como ferramenta de divulgação da localização destes para os clientes que não sabem como chegar.
+            </P>
+
+            <div class="col-sm-8 col-md-7 col-sm-push-2 col-md-push-3">
+				<img src="{% static 'img/site/buscaPicos.png' %}" class="img-responsive" alt="Busca Picos"/>
+				<br/>
+			</div>
+			
+			<p class="col-xs-12 col-sm-12 col-md-12 text-justify">
+                Para divulgar ou salvar Empresa, Produto ou Serviço como favorito efetue no site seu cadastro. Preencha todos os campos e certifique-se de que as informações estão corretamente destacadas.
+            </P>
+
+        </div>
+        <aside role="complementary" class="col-sm-12 col-md-4">
+            <h2>Encontre aqui</h2>
+            
+            <a href="">
+	            <div class="col-sm-12 col-md-10 col-xs-push-1 col-sm-push-1 col-md-push-1">
+					<img src="{% static 'img/site/empresas.png' %}" class="img-responsive" alt="Empresas"/>
+					<br/>
+				</div>
+				<h4 class="text-center">Empresas</h4>
+				<br/>
+			</a>
+			<a href="">
+				<div class="col-sm-12 col-md-10 col-xs-push-1 col-sm-push-1 col-md-push-1">
+					<img src="{% static 'img/site/produtos.png' %}" class="img-responsive" alt="Produtos"/>
+					<br/>
+				</div>
+				<h4 class="text-center">Produtos</h4>
+				<br/>
+			</a>
+			<a href="" role="button">
+				<div class="col-sm-12 col-md-10 col-xs-push-1 col-sm-push-1 col-md-push-1">
+					<img src="{% static 'img/site/servicos.png' %}" class="img-responsive" alt="Servicos"/>
+					<br/>
+				</div>
+				<h4 class="text-center">Serviços</h4>
+				<br/>
+			</a>
+
+        </aside>
+    </div>
+</div>
+
+{% endblock %}

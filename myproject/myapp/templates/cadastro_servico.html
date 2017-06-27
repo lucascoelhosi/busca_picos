@@ -1,0 +1,61 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+	{% if type == 0 %}
+		<div class="alert alert-danger" role="alert">{{msg}}</div>
+
+	{% elif type == 1 %}
+		<div class="alert alert-warning" role="alert">{{msg}}</div>
+
+	{% elif type == 2 %}
+		<div class="alert alert-success" role="alert">{{msg}}</div>
+
+	{% endif %}
+	
+
+	<div class="col-sm-12 col-md-12 col-sm-push-6 col-md-push-3">
+		<form class="form_cad_user" method="POST" enctype="multipart/form-data" action="{% url 'service_submit' %}">
+			<fieldset>
+				<legend>Cadastro de Serviços</legend>
+				<div class="form-group">
+					<label for="product">Identifique o Serviço</label>
+					<input type="text" name="service_name" class="form-control" id="service" 
+					placeholder="Informe seu Serviço" required/>
+				</div>
+				<div class="form-group">
+					<label for="comment">Descrição</label>
+					<textarea type="text" class="form-control" rows="4" id="comment" name="service_description" placeholder="Descreva seu serviço" required></textarea>
+			    </div>
+
+			    <div class="form-group">
+					<label for="productImage">Imagem do produto</label>
+					<input id="productImage" name="image" class="input-file" type="file" required/>
+				</div>
+
+				<br/>
+				<legend>Onde encontrar o serviço </legend>
+				<div class="form-group">
+				  <label for="rua">Endereço</label>
+				  <input id="rua" name="endereco" type="text" placeholder="Rua, Travessa, Avenida" class="form-control" required/>
+				</div>
+				<div class="form-group">
+					<label for="numero_form">Nº</label>  
+					<input id="numero_form" name="numero" type="text" placeholder="Número" class="form-control input-md">
+				</div>
+				<div class="form-group">
+					<label for="bairro_form">Bairro</label>
+					<input id="bairro_form" name="bairro" type="text" placeholder="Informe o bairro" class="form-control input-md" required/>
+				</div>
+								
+				<br/>
+				{% csrf_token %}
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-floppy-save"> Cadastrar serviço </span>
+				</button>
+			</fieldset>
+		</form>
+		<br/>
+	</div>
+
+{% endblock %}

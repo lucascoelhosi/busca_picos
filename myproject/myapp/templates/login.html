@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+	{% if type == 0 %}
+		<div class="alert alert-danger" role="alert">{{msg}}</div>
+
+	{% elif type == 1 %}
+	<div class="alert alert-warning" role="alert">{{msg}}</div>
+
+	{% elif type == 2 %}
+	<div class="alert alert-success" role="alert">{{msg}}</div>
+
+{% endif %}
+	<div class="col-sm-12 col-md-10 col-sm-push-6 col-md-push-4">
+		<form class="form_cad_users" method="POST" action="{% url 'login_submit' %}">
+			<fieldset>
+				<legend>Página de Login</legend>
+				<div class="form-group">
+					<label for="exampleInputEmail1">E-mail</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" 
+					placeholder="Digite seu melhor e-mail" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Senha</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" 
+					placeholder="Digite uma senha segura" name="password" required>
+				</div>
+				{% csrf_token %}
+
+				<button type="submit" class="btn btn-success">
+					<span class="glyphicon glyphicon-ok"> Entrar </span>
+				</button>
+			</fieldset>
+		</form>
+		<br/>
+	</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+	{% if type == 0 %}
+		<div class="alert alert-danger" role="alert">{{msg}}</div>
+
+	{% elif type == 1 %}
+		<div class="alert alert-warning" role="alert">{{msg}}</div>
+
+	{% elif type == 2 %}
+		<div class="alert alert-success" role="alert">{{msg}}</div>
+
+	{% endif %}
+	
+
+	<div class="col-sm-12 col-md-12 col-sm-push-6 col-md-push-3">
+		<form class="form_cad_user" method="POST" action="{% url 'product_submit' %}">
+			<fieldset>
+				<legend>Cadastro de Produto</legend>
+				<div class="form-group">
+					<label for="product">Nome do produto</label>
+					<input type="text" name="product_name" class="form-control" id="product" 
+					placeholder="Informe o nome do produto" required/>
+				</div>
+				<div class="form-group">
+					<label for="comment">Descrição</label>
+					<textarea type="text" class="form-control" rows="4" id="comment" name="product_description" placeholder="Descreva seu produto" required></textarea>
+			    </div>
+
+				<br/>
+				<legend>Onde encontrar o produto </legend>
+				<div class="form-group">
+				  <label for="rua">Endereço</label>
+				  <input id="rua" name="endereco" type="text" placeholder="Rua, Travessa, Avenida" class="form-control" required/>
+				</div>
+				<div class="form-group">
+					<label for="numero_form">Nº</label>  
+					<input id="numero_form" name="numero" type="text" placeholder="Número" class="form-control input-md">
+				</div>
+				<div class="form-group">
+					<label for="bairro_form">Bairro</label>
+					<input id="bairro_form" name="bairro" type="text" placeholder="Informe o bairro" class="form-control input-md" required/>
+				</div>
+								
+				<br/>
+				{% csrf_token %}
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-floppy-save"> Cadastrar produto </span>
+				</button>
+			</fieldset>
+		</form>
+		<br/>
+	</div>
+
+{% endblock %}

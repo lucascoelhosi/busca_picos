@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*color: #FF9700;
+	background-color: #0098FF;*/
+
+html, body
+{
+	font-family: 'Roboto', sans-serif;
+	background-color: #FFF;
+}
+
+a {
+	text-decoration: none;
+}
+
+.form_cad_users
+{
+	border: 1px solid #CCC;
+	padding: 20px;
+	background-color: #F9F9F9;
+}
+
+.form_cad_users legend
+{
+	padding-bottom: 15px;
+}
+
+.btn, .form-control
+{
+	border-radius: 3px;
+}
+
+.paragrafo {
+	font-size: 20px !important;
+}

@@ -1,0 +1,94 @@
+{% extends "template.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <div class="nav-sidebar">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="{% url 'profile' %}">
+                                <i class="glyphicon glyphicon-home"> Home </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'listar_usuarios' %}">
+                                <i class="glyphicon glyphicon-home"> Listar Usuarios </i>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-divider"></li>
+                        <li>
+                            <i class="glyphicon glyphicon-th-list"> Minhas ofertas </i>
+                        </li>
+                        <li class="nav-divider"></li>
+                        <li>
+                            <a href="{% url 'meus_produtos' %}">
+                                <i class="glyphicon glyphicon-phone"> Meus Produtos </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'meus_servicos' %}">
+                                <i class="glyphicon glyphicon-wrench"> Meus Serviços </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'minhas_empresas' %}">
+                                <i class="glyphicon glyphicon-briefcase"> Minhas Empresas </i>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-divider"></li>
+                        <li>
+                            <i class="glyphicon glyphicon-heart"> Meus favoritos </i>
+                        </li>
+                        <li class="nav-divider"></li>
+                        <li>
+                            <a href="{% url 'produtos_favoritos' %}">
+                                <i class="glyphicon glyphicon-phone"> Produtos </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'servicos_favoritos' %}">
+                                <i class="glyphicon glyphicon-wrench"> Serviços </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'empresas_favoritas' %}">
+                                <i class="glyphicon glyphicon-briefcase"> Empresas </i>
+                            </a>
+                        </li>
+
+
+
+                        <li class="nav-divider"></li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="glyphicon glyphicon-cog"></i> Configurações
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="glyphicon glyphicon-off"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /list-group -->      
+            </div><!-- /col -->
+            
+            
+            <h1>Listar Usuarios </h1>
+
+            {% for user in users %}
+                {{ user.name }}
+                {{ user.email }}
+            {% endfor %}
+
+        </div><!-- /row -->
+        <br/>
+    </div><!-- /container -->
+
+{% endblock %}
