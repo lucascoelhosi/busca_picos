@@ -32,42 +32,6 @@
                                 <i class="glyphicon glyphicon-briefcase"> Minhas Empresas </i>
                             </a>
                         </li>
-
-
-                        <li class="nav-divider"></li>
-                        <li>
-                            <i class="glyphicon glyphicon-heart"> Meus favoritos </i>
-                        </li>
-                        <li class="nav-divider"></li>
-                        <li>
-                            <a href="{% url 'produtos_favoritos' %}">
-                                <i class="glyphicon glyphicon-phone"> Produtos </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'servicos_favoritos' %}">
-                                <i class="glyphicon glyphicon-wrench"> Serviços </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'empresas_favoritas' %}">
-                                <i class="glyphicon glyphicon-briefcase"> Empresas </i>
-                            </a>
-                        </li>
-
-
-
-                        <li class="nav-divider"></li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="glyphicon glyphicon-cog"></i> Configurações
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="glyphicon glyphicon-off"></i> Sair
-                            </a>
-                        </li>
                     </ul>
                 </div><!-- /list-group -->      
             </div><!-- /col -->
@@ -79,13 +43,7 @@
                     <button type=button class="btn btn-success "> 
                         Cadastrar nova empresa
                     </button>
-                </a>
-                <button type=button class="btn btn-warning "> 
-                    Editar uma empresa
-                </button>
-                <button type=button class="btn btn-danger "> 
-                    Excluir uma empresa
-                </button>        
+                </a>       
             </div>
             <br/>
 
@@ -94,14 +52,18 @@
                     <div class='list-group gallery'>
                     
                         {% for empresa in empresas %}
-                            <div class='col-sm-4 col-xs-12 col-md-3 col-lg-3'>
-                                <a class="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-                                    <img class="img-responsive" alt="Image" src="../../media/{{ empresa.docfile }}" />
-                                    <div>
-                                        <p>{{ empresa.company_name }}</p><br/>
-                                        <small class='text-muted'>{{ empresa.company_description }}</small>
-                                    </div> <!-- text-right / end -->
-                                </a>
+                            <div class='col-sm-4 col-xs-12 col-md-3 col-lg-3 text-center'>
+                                <img class="img-responsive" alt="Image" src="../../media/{{ empresa.docfile }}" />
+                                <div>
+                                    <p>{{ empresa.company_name }}</p>
+                                    <small class='text-muted'>Descrição:<br>{{ empresa.company_description }}</small>
+
+                                    <small class='text-muted'><br/>Endereço: <br/>{{ empresa.company_adress_of_location }}</small>
+
+                                    <small class='text-muted'>{{ empresa.company_numero }}<br/></small>
+
+                                    <small class='text-muted'>{{ empresa.company_block }}</small>
+                                </div> <!-- text-right / end -->
                             </div> <!-- col-6 / end -->
                         {% endfor %}
                         

@@ -32,42 +32,6 @@
                                 <i class="glyphicon glyphicon-briefcase"> Minhas Empresas </i>
                             </a>
                         </li>
-
-
-                        <li class="nav-divider"></li>
-                        <li>
-                            <i class="glyphicon glyphicon-heart"> Meus favoritos </i>
-                        </li>
-                        <li class="nav-divider"></li>
-                        <li>
-                            <a href="{% url 'produtos_favoritos' %}">
-                                <i class="glyphicon glyphicon-phone"> Produtos </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'servicos_favoritos' %}">
-                                <i class="glyphicon glyphicon-wrench"> Serviços </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'empresas_favoritas' %}">
-                                <i class="glyphicon glyphicon-briefcase"> Empresas </i>
-                            </a>
-                        </li>
-
-
-
-                        <li class="nav-divider"></li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="glyphicon glyphicon-cog"></i> Configurações
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="glyphicon glyphicon-off"></i> Sair
-                            </a>
-                        </li>
                     </ul>
                 </div><!-- /list-group -->      
             </div><!-- /col -->
@@ -79,13 +43,7 @@
                     <button type=button class="btn btn-success "> 
                         Cadastrar novo serviço
                     </button>
-                </a>
-                <button type=button class="btn btn-warning "> 
-                    Editar um serviço
-                </button>
-                <button type=button class="btn btn-danger "> 
-                    Excluir um serviço
-                </button>        
+                </a>        
             </div>
             <br/>
 
@@ -93,12 +51,17 @@
                 <div class="row">
                     <div class='list-group gallery'>
                         {% for service in services %}
-                            <div class='col-sm-4 col-xs-12 col-md-3 col-lg-3'>    
+                            <div class='col-sm-4 col-xs-12 col-md-3 col-lg-3 text-center'>    
                                 <img class="img-responsive" alt="Image" src="../../media/{{ service.docfile }}" />
                                 <div>
-                                    <p>{{ service.service_name }}</p><br/>
-                                    <small class='text-muted'>{{ service.service_description }}</small>
+                                    <p>{{ service.service_name }}</p>
+                                    <small class='text-muted'>Descrição:<br>{{ service.service_description }}</small>
 
+                                    <small class='text-muted'><br/>Endereço: <br/>{{ service.service_adress_of_location }}</small>
+
+                                    <small class='text-muted'>{{ service.service_numero }}<br/></small>
+
+                                    <small class='text-muted'>{{ service.service_block }}</small>
                                 </div> <!-- text-right / end -->
                             </div> <!-- col-6 / end -->
                         {% endfor %}

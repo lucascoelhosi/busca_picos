@@ -32,42 +32,6 @@
                                 <i class="glyphicon glyphicon-briefcase"> Minhas Empresas </i>
                             </a>
                         </li>
-
-
-                        <li class="nav-divider"></li>
-                        <li>
-                            <i class="glyphicon glyphicon-heart"> Meus favoritos </i>
-                        </li>
-                        <li class="nav-divider"></li>
-                        <li>
-                            <a href="{% url 'produtos_favoritos' %}">
-                                <i class="glyphicon glyphicon-phone"> Produtos </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'servicos_favoritos' %}">
-                                <i class="glyphicon glyphicon-wrench"> Serviços </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'empresas_favoritas' %}">
-                                <i class="glyphicon glyphicon-briefcase"> Empresas </i>
-                            </a>
-                        </li>
-
-
-
-                        <li class="nav-divider"></li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="glyphicon glyphicon-cog"></i> Configurações
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="glyphicon glyphicon-off"></i> Sair
-                            </a>
-                        </li>
                     </ul>
                 </div><!-- /list-group -->      
             </div><!-- /col -->
@@ -88,20 +52,17 @@
                     <div class='list-group gallery'>
                 
                         {% for product in products %}
-                            <div class='col-sm-4 col-xs-12 col-md-3 col-lg-3'>
+                            <div class='col-sm-4 col-xs-12 col-md-3 col-lg-3 text-center'>
                                 <img class="img-responsive" alt="Image" src="../../media/{{ product.docfile }}" />
-                                <div class="text-center">
-                                    <p>{{ product.name }}</p><br/>
-                                    <small class='text-muted'>{{ product.description }}</small><br/>
-                                    <small class='text-muted'>{{ product.id }}</small><br/>
-                                    <a href="{% url 'edicao_produto' %}?id_produto=product.id">
-                                        <button type=button class="btn btn-warning "> 
-                                            Editar
-                                        </button>
-                                    </a>
-                                    <button type=button class="btn btn-danger "> 
-                                        Excluir
-                                    </button>        
+                                <div>
+                                    <p>{{ product.name }}</p>
+                                    <small class='text-muted'>Descrição:<br>{{ product.description }}</small>
+
+                                    <small class='text-muted'><br/>Endereço: <br/>{{ product.adress_of_location }}</small>
+
+                                    <small class='text-muted'>{{ product.numero }}<br/></small>
+
+                                    <small class='text-muted'>{{ product.localizacao_block }}</small>
                                 </div> <!-- text-right / end -->
                                 
                             </div> <!-- col-6 / end -->

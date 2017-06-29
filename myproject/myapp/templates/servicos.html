@@ -46,12 +46,18 @@
 		<div class="row">
 			<div class='list-group gallery'>
 				{% for service in services %}
-					<div class='col-sm-4 col-xs-12 col-md-3 col-lg-3'>
+					<div class='col-sm-4 col-xs-12 col-md-3 col-lg-3 text-center'>
 		                <img class="img-responsive" alt="Image" src="../../media/{{ service.docfile }}" />
 	                    <div>
-	                        <p>{{ service.service_name }}</p><br/>
-	                        <small class='text-muted'>{{ service.service_description }}</small>
-	                    </div> <!-- text-right / end -->
+                                    <p>{{ service.service_name }}</p>
+                                    <small class='text-muted'>Descrição:<br>{{ service.service_description }}</small>
+
+                                    <small class='text-muted'><br/>Endereço: <br/>{{ service.service_adress_of_location }}</small>
+
+                                    <small class='text-muted'>{{ service.service_numero }}<br/></small>
+
+                                    <small class='text-muted'>{{ service.service_block }}</small>
+                                </div> <!-- text-right / end -->
 		            </div> <!-- col-6 / end -->
 			    {% endfor %}
 	        </div> <!-- list-group / end -->
