@@ -28,7 +28,7 @@
         <aside role="complementary" class="col-sm-12 col-md-4">
             <h2>Encontre aqui</h2>
             
-            <a href="">
+            <a href="{% url 'empresas' %}">
 	            <div class="col-sm-12 col-md-10 col-xs-push-1 col-sm-push-1 col-md-push-1">
 					<img src="{% static 'img/site/empresas.png' %}" class="img-responsive" alt="Empresas"/>
 					<br/>
@@ -36,7 +36,7 @@
 				<h4 class="text-center">Empresas</h4>
 				<br/>
 			</a>
-			<a href="">
+			<a href="{% url 'produtos' %}">
 				<div class="col-sm-12 col-md-10 col-xs-push-1 col-sm-push-1 col-md-push-1">
 					<img src="{% static 'img/site/produtos.png' %}" class="img-responsive" alt="Produtos"/>
 					<br/>
@@ -44,7 +44,7 @@
 				<h4 class="text-center">Produtos</h4>
 				<br/>
 			</a>
-			<a href="" role="button">
+			<a href="{% url 'servicos' %}" role="button">
 				<div class="col-sm-12 col-md-10 col-xs-push-1 col-sm-push-1 col-md-push-1">
 					<img src="{% static 'img/site/servicos.png' %}" class="img-responsive" alt="Servicos"/>
 					<br/>
